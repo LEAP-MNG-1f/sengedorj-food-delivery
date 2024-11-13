@@ -1,6 +1,23 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { API_URL } from "@/app/constant/constant";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+  const fetchData = async () => {
+    try {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -14,6 +31,7 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">Food delivery .</li>
+          <p>{data}</p>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
