@@ -4,17 +4,16 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-import { SameText } from "../text/text";
 
 type ActionAreaCardProps = {
-  icons: React.ReactNode;
-  text: string;
+  icons?: React.ReactNode;
+  text?: string;
 };
 
 export default function ActionAreaCard({ icons, text }: ActionAreaCardProps) {
   return (
-    <div className="container m-auto pt-[100px] pb-[100px]">
-      <Card sx={{ maxWidth: 345, borderRadius: "20px" }}>
+    <div className="pt-[100px] pb-[100px]">
+      <Card sx={{ width: "328px", height: "150px", borderRadius: "20px" }}>
         <CardActionArea>
           <CardMedia />
           <div>{icons}</div>
