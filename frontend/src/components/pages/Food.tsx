@@ -1,8 +1,7 @@
-import { SaleFoodCard } from "../card/Food";
-import { SaleFood } from "../foodpage/Sale";
 import { DessertFood } from "../foodpage/Dessert";
 import { MainFood } from "../foodpage/Main";
 import { SaladFood } from "../foodpage/Salad";
+import { SaleFood } from "../foodpage/Sale";
 
 export const FoodMenu = () => {
   return (
@@ -10,6 +9,7 @@ export const FoodMenu = () => {
       <SaleFood />
       <MainFood />
       <SaladFood />
+
       <DessertFood />
     </div>
   );

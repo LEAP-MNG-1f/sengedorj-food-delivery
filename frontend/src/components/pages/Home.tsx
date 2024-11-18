@@ -22,7 +22,7 @@ export const HomePage = () => {
       <div>
         <FoodMenu />
       </div>
-      <div className="pt-[100px]">
+      <div className="pt-[200px]">
         <Footer />
       </div>
     </div>

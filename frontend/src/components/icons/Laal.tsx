@@ -2,7 +2,7 @@ export const LaalIcon = () => {
   return (
     <div>
       <svg
-        width="1440"
+        width="100%"
         height="1084"
         viewBox="0 0 1440 1084"
         fill="none"
