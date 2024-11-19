@@ -17,7 +17,7 @@ export const SaleFood = () => {
   const foods: FoodItem[] = [
     {
       _id: 1,
-      img: "https://t3.ftcdn.net/jpg/08/04/95/38/360_F_804953875_loZeXNzPUzewtun96e65ZJgmagdwvqvU.jpg",
+      img: "http://res.cloudinary.com/dqjfodxqd/image/upload/v1731989910/bhfq861k2lf94tw4vff2.jpg",
       text: "Өглөөний хоол",
       amount: 5000,
       ingredients: "Өндөг, Сүү, Гурил",

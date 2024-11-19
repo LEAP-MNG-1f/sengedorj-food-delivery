@@ -2,6 +2,7 @@
 import { HeaderPart } from "../Header";
 import { Footer } from "./Footer";
 import * as React from "react";
+
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
@@ -9,7 +10,7 @@ export const FoodMenuua = () => {
   return (
     <div>
       <HeaderPart />
-      <div className="w-full container m-auto py-[32px]">
+      <div className=" container m-auto pt-[120px] pb-[40px]">
         <Stack direction="row" spacing={2}>
           <Button variant="outlined" className="w-[25%]">
             Breakfast
