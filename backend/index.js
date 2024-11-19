@@ -1,5 +1,6 @@
 import express, { response } from "express";
 import cors from "cors";
+import { v2 as cloudinary } from "cloudinary";
 
 const server = express();
 const PORT = 8000;
