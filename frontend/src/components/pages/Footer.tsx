@@ -3,6 +3,7 @@ import { WhitePineconeIcon } from "../icons/White";
 import { FacebookIcon } from "../icons/Facebook";
 import { IgIcon } from "../icons/Ig";
 import { TwitterIcon } from "../icons/Twitter";
+import Link from "next/link";
 
 export const Footer: React.FC = () => {
   return (
@@ -15,10 +16,14 @@ export const Footer: React.FC = () => {
         />
       </div>
       <div className="w-full h-full flex justify-center items-center">
-        <div className="w-[60%] h-auto flex flex-col items-center justify-center">
+        <div className="w-[67%] h-auto flex flex-col items-center justify-center">
           <div className="flex items-center gap-[10px]">
             <WhitePineconeIcon />
-            <h1 className="font-semibold text-2xl text-white">Food Delivery</h1>
+            <Link href={`/qwert1234`}>
+              <h1 className="font-semibold text-2xl text-white">
+                Food Delivery
+              </h1>
+            </Link>
           </div>
 
           <div className="w-full pt-10 flex justify-between">
@@ -41,7 +46,7 @@ export const Footer: React.FC = () => {
 
           <div className="w-full flex justify-center gap-4 pt-10 items-center">
             <a
-              href="https://www.youtube.com/watch?v=zUkR6chwtOo"
+              href="https://www.facebook.com/sengeenee.sengee"
               className="transform transition-transform duration-200 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
@@ -49,7 +54,7 @@ export const Footer: React.FC = () => {
               <FacebookIcon />
             </a>
             <a
-              href="https://www.youtube.com/watch?v=MRErjPLyvDc"
+              href="https://www.instagram.com/sengdrj___u/"
               className="transform transition-transform duration-200 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"

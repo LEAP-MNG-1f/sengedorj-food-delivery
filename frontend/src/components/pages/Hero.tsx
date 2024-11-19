@@ -1,6 +1,3 @@
-import { Opacity } from "@mui/icons-material";
-import { LaalIcon } from "../icons/Laal";
-
 export const Hero = () => {
   return (
     <div className=" bg-green-500 ">

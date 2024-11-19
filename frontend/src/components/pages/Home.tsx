@@ -1,5 +1,5 @@
 import ActionAreaCard from "../card/Card";
-
+import Link from "next/link";
 import { HeaderPart } from "../Header";
 import { BookIcon } from "../icons/Book";
 import { Clock } from "../icons/Clock";
