@@ -5,12 +5,14 @@ import * as React from "react";
 
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import { SaladFood } from "../foodpage/Salad";
+import { DessertFood } from "../foodpage/Dessert";
 
 export const FoodMenuua = () => {
   return (
     <div>
       <HeaderPart />
-      <div className=" container m-auto pt-[120px] pb-[40px]">
+      <div className=" container m-auto pt-[100px] pb-[40px]">
         <Stack direction="row" spacing={2}>
           <Button variant="outlined" className="w-[25%]">
             Breakfast
@@ -26,6 +28,8 @@ export const FoodMenuua = () => {
           </Button>
         </Stack>
       </div>
+      <SaladFood />
+      <DessertFood />
       <Footer />
     </div>
   );

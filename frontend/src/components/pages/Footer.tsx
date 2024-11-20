@@ -12,14 +12,14 @@ export const Footer: React.FC = () => {
         <img
           className="h-full w-full absolute object-cover"
           src="Zurag.png"
-          alt=""
+          alt="Background"
         />
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-[67%] h-auto flex flex-col items-center justify-center">
           <div className="flex items-center gap-[10px]">
             <WhitePineconeIcon />
-            <Link href={`/qwert1234`}>
+            <Link href={`/`}>
               <h1 className="font-semibold text-2xl text-white">
                 Food Delivery
               </h1>
@@ -28,17 +28,19 @@ export const Footer: React.FC = () => {
 
           <div className="w-full pt-10 flex justify-between">
             {[
-              "Нүүр",
-              "Холбоо барих",
-              "Хоолны цэс",
-              "Үйлчилгээний нөхцөл",
-              "Хүргэлтийн бүс",
-              "Нууцлалын бодлого",
-            ].map((text) => (
+              { text: "Нүүр", href: "/" },
+              { text: "Холбоо барих", href: "/contact" },
+              { text: "Хоолны цэс", href: "/food-menu" },
+              { text: "Үйлчилгээний нөхцөл", href: "/terms" },
+              { text: "Хүргэлтийн бүс", href: "/delivery" },
+              { text: "Нууцлалын бодлого", href: "/privacy" },
+            ].map(({ text, href }) => (
               <div key={text} className="relative group">
-                <h1 className="text-white hover:text-gray-200 transition-colors duration-200">
-                  {text}
-                </h1>
+                <Link href={href}>
+                  <h1 className="text-white hover:text-gray-200 transition-colors duration-200 cursor-pointer">
+                    {text}
+                  </h1>
+                </Link>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
               </div>
             ))}

@@ -56,12 +56,7 @@ export const SaleFood = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 py-8 px-4 container mx-auto">
-      <div className="flex items-center gap-3">
-        <StarIcon />
-        <h1 className="font-bold text-2xl text-gray-800">Хямдралтай</h1>
-      </div>
-
+    <div className="flex flex-col gap-6 py-8  container mx-auto">
       <div className="overflow-x-auto pb-4">
         <div className="flex gap-6 min-w-min justify-between">
           {foods.map((food, index) => (
