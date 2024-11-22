@@ -80,7 +80,7 @@ export const HeaderPart: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-12">
             <div className="transition-transform duration-300 hover:scale-105">
-              <Link href="/" className="block">
+              <Link href="admin-page" className="block">
                 <PineIcon />
               </Link>
             </div>

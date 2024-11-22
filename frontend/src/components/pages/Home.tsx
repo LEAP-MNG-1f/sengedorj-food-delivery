@@ -12,7 +12,9 @@ export const HomePage = () => {
   return (
     <div>
       <HeaderPart />
-      <Hero />
+      <div className="pt-[75px]">
+        <Hero />
+      </div>
       <div className="flex container m-auto  justify-between">
         <ActionAreaCard icons={<BookIcon />} text={"Хүргэлтийн төлөв хянах"} />
         <ActionAreaCard icons={<Clock />} text={"Шуурхай хүргэлт"} />
