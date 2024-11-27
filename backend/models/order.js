@@ -15,12 +15,13 @@ const orderSchema = new Schema({
   },
   customer: {
     type: mongoose.SchemaTypes.ObjectId,
-    ref: "user",
+    ref: "User",
     required: true,
   },
   foodIds: {
-    type: Array,
-    ref: "food",
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Food",
+    required: true,
   },
   process: {
     type: String,
@@ -34,15 +35,15 @@ const orderSchema = new Schema({
     type: String,
     required: true,
   },
-  Khoroo: {
+  khoroo: {
     type: String,
     required: true,
   },
-  Apartment: {
+  apartment: {
     type: String,
     required: true,
   },
 });
 
-const orderModel = model("order", orderSchema);
+const orderModel = model("Order", orderSchema);
 export default orderModel;

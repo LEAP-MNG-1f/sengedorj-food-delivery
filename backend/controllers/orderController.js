@@ -9,8 +9,8 @@ const createOrder = async (req, res) => {
     process: "active",
     CreateDate: new Date(),
     district: "ih delguur",
-    Khoroo: "15horoo",
-    Apartment: "baga tengeriin am",
+    khoroo: "15horoo",
+    apartment: "baga tengeriin am",
   });
 
   res.json({
@@ -20,7 +20,10 @@ const createOrder = async (req, res) => {
 };
 
 const getAllOrders = async (req, res) => {
-  const result = await orderModel.find().populate("customer");
+  const result = await orderModel
+    .find()
+    .populate("customer")
+    .populate("foodIds");
 
   res.json({
     succes: true,
