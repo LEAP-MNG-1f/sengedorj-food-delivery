@@ -150,7 +150,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import foodModel from "./model/food.js";
+import foodModel from "./models/food.js";
 import userRouter from "./router/userRouter.js";
 import orderRouter from "./router/orderRouter.js";
 import categoryRouter from "./router/categoryRouter.js";
