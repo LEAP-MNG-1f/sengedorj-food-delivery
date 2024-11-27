@@ -152,6 +152,9 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import foodModel from "./model/food.js";
 import userRouter from "./router/userRouter.js";
+import orderRouter from "./router/orderRouter.js";
+import categoryRouter from "./router/categoryRouter.js";
+import foodRouter from "./router/foodRouter.js";
 
 mongoose.connect(
   "mongodb+srv://sengedorj:MjQvdwlEiJWcdpV2@leap-sengee.5ohxf.mongodb.net/sengee-food"
@@ -163,17 +166,9 @@ const PORT = 8000;
 server.use(cors());
 server.use(bodyParser.json());
 server.use("/api", userRouter);
-
-server.post("/create", async (req, res) => {
-  const result = await foodModel.create({
-    name: "luffy",
-    year: 1999,
-  });
-  res.json({
-    succes: true,
-    data: result,
-  });
-});
+server.use("/api", orderRouter);
+server.use("/api", categoryRouter);
+server.use("/api", foodRouter);
 
 server.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`);

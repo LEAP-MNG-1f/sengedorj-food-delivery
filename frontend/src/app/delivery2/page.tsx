@@ -1,5 +1,6 @@
 "use client";
 import { HeaderPart } from "@/components/Header";
+import { StarIcon } from "@/components/icons/Star";
 import { Footer } from "@/components/pages/Footer";
 import React from "react";
 
@@ -18,10 +19,12 @@ export default function Home() {
             loading="lazy"
           ></iframe>
         </div>
-
-        <h3 className="text-xl font-semibold mb-4">
-          🚚 Хүргэлтийн бүс дэх хаягууд
-        </h3>
+        <div className="flex items-center gap-[5px] mb-4">
+          <StarIcon />
+          <h3 className="text-xl font-semibold  ">
+            Хүргэлтийн бүс дэх хаягууд
+          </h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="border rounded-lg shadow-md p-4">
             <h4 className="text-lg font-semibold  mb-2">A бүс</h4>
