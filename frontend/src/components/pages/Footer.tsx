@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
               { text: "Холбоо барих", href: "/contact" },
               { text: "Хоолны цэс", href: "/food-menu" },
               { text: "Үйлчилгээний нөхцөл", href: "/terms" },
-              { text: "Хүргэлтийн бүс", href: "/delivery2" },
+              { text: "Хүргэлтийн бүс", href: "/delivery" },
               { text: "Нууцлалын бодлого", href: "/privacy" },
             ].map(({ text, href }) => (
               <div key={text} className="relative group">

@@ -16,7 +16,7 @@ import IconButton from "@mui/material/IconButton";
 const navigationItems = [
   { label: "НҮҮР", path: "/" },
   { label: "ХООЛНЫ ЦЭС", path: "/food-menu" },
-  { label: "ХҮРГЭЛТИЙН БҮС", path: "/delivery" },
+  { label: "ХҮРГЭЛТИЙН БҮС", path: "/order" },
 ];
 
 export const HeaderPart: React.FC = () => {
