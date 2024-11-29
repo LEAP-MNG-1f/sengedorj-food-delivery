@@ -1,6 +1,5 @@
 import React from "react";
 import { FoodModal } from "../card/Food";
-import { StarIcon } from "../icons/Star";
 
 interface FoodItem {
   _id?: number;

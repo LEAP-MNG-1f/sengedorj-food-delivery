@@ -1,17 +1,19 @@
 import { RttRounded } from "@mui/icons-material";
 import ActionAreaCard from "../card/Card";
-import { HeaderPart } from "../Header";
+
 import { BookIcon } from "../icons/Book";
 import { Clock } from "../icons/Clock";
 import { Food } from "../icons/Food";
 import { FoodMenu } from "./Food";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
+import { HeaderPart } from "../Header";
+import { ParentComponent } from "./Parent";
 
 export const HomePage = () => {
   return (
     <div>
-      <HeaderPart />
+      <ParentComponent />
       <div className="pt-[75px]">
         <Hero />
       </div>
