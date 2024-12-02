@@ -8,12 +8,11 @@ import { FoodMenu } from "./Food";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
 import { HeaderPart } from "../Header";
-import { ParentComponent } from "./Parent";
 
 export const HomePage = () => {
   return (
     <div>
-      <ParentComponent />
+      <HeaderPart />
       <div className="pt-[75px]">
         <Hero />
       </div>
