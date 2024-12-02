@@ -17,21 +17,21 @@ export const FoodMenu = () => {
       <div className="flex flex-col">
         <div className="flex items-center gap-3">
           <StarIcon />
-          <h1 className="font-bold text-2xl text-gray-800">Хямдралтай</h1>
+          <h1 className="font-bold text-2xl text-gray-800">Үндсэн хоол</h1>
         </div>
         <MainFood />
       </div>
       <div className="flex flex-col">
         <div className="flex items-center gap-3">
           <StarIcon />
-          <h1 className="font-bold text-2xl text-gray-800">Хямдралтай</h1>
+          <h1 className="font-bold text-2xl text-gray-800">Салад ба зууш</h1>
         </div>
         <SaladFood />
       </div>
       <div className="flex flex-col">
         <div className="flex items-center gap-3">
           <StarIcon />
-          <h1 className="font-bold text-2xl text-gray-800">Хямдралтай</h1>
+          <h1 className="font-bold text-2xl text-gray-800">Амттан</h1>
         </div>
         <DessertFood />
       </div>

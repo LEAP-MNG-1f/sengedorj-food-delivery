@@ -1,11 +1,11 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const foodSchema = new Schema({
+const foodSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  Image: {
+  image: {
     type: String,
     required: true,
   },
@@ -18,11 +18,11 @@ const foodSchema = new Schema({
     required: true,
   },
   categoryId: {
-    type: String,
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Category",
     required: true,
   },
 });
 
-const foodModel = model("Food", foodSchema);
-
-export default foodModel;
+const Food = mongoose.model("Food", foodSchema);
+export default Food;

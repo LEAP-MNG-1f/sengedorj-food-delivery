@@ -1,15 +1,15 @@
 import mongoose, { Schema, model } from "mongoose";
 
-const roleEnum = {
-  values: ["admin", "user"],
-};
-
 const categorySchema = new Schema({
   name: {
     type: String,
     required: true,
   },
+  foodId: {
+    type: String,
+    default: "",
+  },
 });
 
-const categoryModel = model("Category", categorySchema);
-export default categoryModel;
+const Category = mongoose.model("Category", categorySchema);
+export default Category;

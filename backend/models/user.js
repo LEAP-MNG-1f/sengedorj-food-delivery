@@ -1,10 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const roleEnum = {
-  values: ["admin", "user"],
-};
-
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -17,16 +13,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber: {
-    type: Number,
+  phoneNumer: {
+    type: String,
     required: true,
   },
   role: {
     type: String,
-    enum: roleEnum,
+    enum: ["admin", "user"],
     default: "user",
   },
 });
 
-const userModel = model("User", userSchema);
-export default userModel;
+const User = mongoose.model("User", userSchema);
+export default User;

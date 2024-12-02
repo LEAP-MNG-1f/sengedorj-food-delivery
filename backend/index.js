@@ -148,27 +148,37 @@
 // });
 import express from "express";
 import cors from "cors";
+import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import userRouter from "./routers/userRouter.js";
 import orderRouter from "./routers/orderRouter.js";
 import categoryRouter from "./routers/categoryRouter.js";
 import foodRouter from "./routers/foodRouter.js";
 
-mongoose.connect(
-  "mongodb+srv://sengedorj:MjQvdwlEiJWcdpV2@leap-sengee.5ohxf.mongodb.net/sengee-food"
-);
-
 const server = express();
 const PORT = 8000;
 
+server.use(express.json());
 server.use(cors());
-server.use(bodyParser.json());
-server.use("/api", userRouter);
-server.use("/api", orderRouter);
-server.use("/api", categoryRouter);
-server.use("/api", foodRouter);
+
+dotenv.config();
+
+const MAIN_URL = "/api";
+
+server.use(MAIN_URL, userRouter);
+server.use(MAIN_URL, orderRouter);
+server.use(MAIN_URL, categoryRouter);
+server.use(MAIN_URL, foodRouter);
+
+mongoose.connect(process.env.MONGODB_URL);
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 server.listen(PORT, () => {
-  console.log(`server is running on http://localhost:${PORT}`);
+  console.log(`server running http://localhost:${PORT}`);
 });

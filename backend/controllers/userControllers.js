@@ -1,27 +1,70 @@
-import userModel from "../models/user.js";
+import User from "../models/user.js";
 
-const createUser = async (req, res) => {
-  const result = await userModel.create({
+const getUser = async (request, response) => {
+  const result = await User.find();
+  response.json({ success: true, data: result });
+};
+
+const createUser = async (request, response) => {
+  const result = await User.create({
     name: "sengee",
-    email: "senge@gmail.com",
-    password: "adasd",
-    phoneNumber: 99009900,
-    role: "admin",
+    email: "sengee@gmail.com",
+    password: "5656",
+    phoneNumer: 99999999,
   });
 
-  res.json({
-    succes: true,
-    data: result,
-  });
+  response.json({ success: true, data: result });
 };
 
-const getAllUsers = async (req, res) => {
-  const result = await userModel.find();
+const updateUser = async (request, response) => {
+  try {
+    const { id } = request.params;
+    const { name, email, password, phoneNumber, role } = request.body;
 
-  res.json({
-    succes: true,
-    data: result,
-  });
+    if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+      return response
+        .status(400)
+        .json({ success: false, message: "Invalid user ID" });
+    }
+
+    const result = await User.findByIdAndUpdate(
+      id,
+      { name, email, password, phoneNumber, role },
+      { new: true, runValidators: true }
+    );
+
+    if (!result) {
+      return response.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    response.json({ success: true, data: result });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({
+      success: false,
+      message: "Error updating user",
+    });
+  }
 };
 
-export { createUser, getAllUsers };
+const deleteUser = async (request, response) => {
+  const { id } = request.params;
+  if (!id.match(/^[0-9a-fA-F]{24}$/)) {
+    return response
+      .status(400)
+      .json({ success: false, message: "Invalid user ID" });
+  }
+  const result = await User.findByIdAndDelete(id);
+  if (!result) {
+    return response.status(404).json({
+      success: false,
+      message: "User not found",
+    });
+  }
+  response.json({ success: true, data: result });
+};
+
+export { createUser, getUser, updateUser, deleteUser };

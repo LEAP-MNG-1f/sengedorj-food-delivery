@@ -1,9 +1,16 @@
-import express from "express";
-import { createUser, getAllUsers } from "../controllers/userControllers.js";
+import exrpess from "express";
+import {
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../controllers/userControllers.js";
 
-const userRouter = express.Router();
+const userRouter = exrpess.Router();
 
-userRouter.get("/users", getAllUsers);
-userRouter.post("/users", createUser);
+userRouter.get("/users", getUser);
+userRouter.post("/create-user", createUser);
+userRouter.put("/update-user/:id", updateUser);
+userRouter.delete("/delete-user/:id", deleteUser);
 
 export default userRouter;

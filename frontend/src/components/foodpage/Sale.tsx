@@ -102,7 +102,6 @@
 // };
 "use client";
 import React, { useState } from "react";
-import { HeaderPart } from "../Header";
 import { FoodModal } from "../card/Food";
 
 interface FoodItem {
@@ -160,15 +159,13 @@ export const SaleFood = () => {
   };
 
   const addToCart = (item: { quantity: number }) => {
-    if (!selectedFood) return; // Ensure selectedFood is not null
+    if (!selectedFood) return;
 
-    // Check if item already exists in cart
     const existingItemIndex = cart.findIndex(
       (cartItem) => cartItem.text === selectedFood.text
     );
 
     if (existingItemIndex > -1) {
-      // If item exists, update its quantity
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += item.quantity;
       setCart(updatedCart);
@@ -218,7 +215,6 @@ export const SaleFood = () => {
             ingredients={selectedFood.ingredients}
             isOpen={isModalOpen}
             onClose={closeModal}
-            onAddToCart={addToCart}
           />
         )}
       </div>
