@@ -25,8 +25,6 @@ const CreateCategory = (props: Props) => {
 
     try {
       const result = await createCategory({ name: categoryName, foodId: "" });
-      console.log("Category created:", result);
-      console.log(categoryName);
 
       props.setIsModalOpenCategory(false);
     } catch (err) {
@@ -47,7 +45,6 @@ const CreateCategory = (props: Props) => {
           <p className="text-[#272727] text-2xl font-bold leading-normal">
             Create new category
           </p>
-          {/* Close Button (X) */}
           <button
             type="button"
             onClick={() => props.setIsModalOpenCategory(false)}

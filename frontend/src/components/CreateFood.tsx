@@ -76,7 +76,6 @@ const CreateFood = (props: Props) => {
               <p className="text-[#272727] text-2xl font-bold leading-normal">
                 Create food
               </p>
-              {/* Close Button (X) */}
               <button
                 type="button"
                 onClick={() => props.setIsModalOpenFood(false)}
