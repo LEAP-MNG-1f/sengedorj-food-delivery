@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
               <IgIcon />
             </a>
             <a
-              href="https://www.youtube.com/watch?v=FSV49swJF7Q"
+              href="https://www.youtube.com/watch?v=Gk5SfFo0QF8"
               className="transform transition-transform duration-200 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
