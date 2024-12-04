@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import ItemCard from "../ItemCard";
 import { FoodModal } from "../card/Food";
-import Cart from "../Cart";
 
 type Food = {
   _id: string;
