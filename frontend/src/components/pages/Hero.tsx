@@ -4,7 +4,6 @@ export const Hero = () => {
       <img className="absolute " src="Zurag.png" alt="Delicious Food 1" />
       <div className="absolute inset-0 bg-pattern opacity-20"></div>
 
-      {/* Left Section: Content */}
       <div className="container m-auto flex justify-between">
         <div className="lg:w-1/2 p-8 z-10">
           <h1 className="text-white text-5xl font-bold pb-[30px]">
@@ -20,11 +19,10 @@ export const Hero = () => {
           </p>
         </div>
 
-        {/* Right Section: Images */}
         <div className="lg:w-1/2 relative z-10 flex items-center justify-center">
           <img
             className="w-[250px] lg:w-[588px] absolute right-10 -bottom-10 object-cover rounded-full"
-            src="Group.png" // Adjust the path if required
+            src="Group.png"
             alt="Delicious Food 2"
           />
         </div>

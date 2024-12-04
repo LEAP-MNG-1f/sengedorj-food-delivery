@@ -1,14 +1,12 @@
 import { v2 as cloudinary } from "cloudinary";
 
 (async function () {
-  // Configuration
   cloudinary.config({
     cloud_name: "dqjfodxqd",
     api_key: "834442891711716",
-    api_secret: "<your_api_secret>", // Click 'View API Keys' above to copy your API secret
+    api_secret: "<your_api_secret>",
   });
 
-  // Upload an image
   const uploadResult = await cloudinary.uploader
     .upload(
       "https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg",
@@ -22,7 +20,6 @@ import { v2 as cloudinary } from "cloudinary";
 
   console.log(uploadResult);
 
-  // Optimize delivery by resizing and applying auto-format and auto-quality
   const optimizeUrl = cloudinary.url("shoes", {
     fetch_format: "auto",
     quality: "auto",
@@ -30,7 +27,6 @@ import { v2 as cloudinary } from "cloudinary";
 
   console.log(optimizeUrl);
 
-  // Transform the image: auto-crop to square aspect_ratio
   const autoCropUrl = cloudinary.url("shoes", {
     crop: "auto",
     gravity: "auto",

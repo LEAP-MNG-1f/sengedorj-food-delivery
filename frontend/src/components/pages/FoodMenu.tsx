@@ -83,7 +83,9 @@ export const FoodMenuua = () => {
 
   const fetchDataFood = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/foods");
+      const response = await fetch(
+        "https://sengedorj-food-delivery-3.onrender.com/api/foods"
+      );
       const data: FoodResponse = await response.json();
       setFoodData(data.data);
     } catch (error) {
@@ -93,7 +95,9 @@ export const FoodMenuua = () => {
 
   const fetchDataCategory = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/categories");
+      const response = await fetch(
+        "https://sengedorj-food-delivery-3.onrender.com/api/categories"
+      );
       const data: CategoryResponse = await response.json();
       setCategoryData(data.data);
       if (data.data.length > 0) {

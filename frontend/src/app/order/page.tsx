@@ -40,7 +40,6 @@ const OrderSummary = () => {
       [name]: value,
     }));
 
-    // Алдааг арилгах
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: "",
@@ -49,7 +48,6 @@ const OrderSummary = () => {
   const handleSubmit = () => {
     const newErrors: { [key: string]: string } = {};
 
-    // Validate fields
     if (!formData.district) newErrors.district = "заавал бөглөх";
     if (!formData.khoroo) newErrors.khoroo = "заавал бөглөх";
     if (!formData.street) newErrors.street = "заавал бөглөх";
@@ -131,7 +129,6 @@ const OrderSummary = () => {
                 )}
               </div>
 
-              {/* Khoroo Select */}
               <div>
                 <label
                   htmlFor="khoroo"
@@ -157,7 +154,6 @@ const OrderSummary = () => {
                 )}
               </div>
 
-              {/* Street Select */}
               <div>
                 <label
                   htmlFor="street"
@@ -183,7 +179,6 @@ const OrderSummary = () => {
                 )}
               </div>
 
-              {/* Additional Info */}
               <div>
                 <label
                   htmlFor="plus"
@@ -206,7 +201,6 @@ const OrderSummary = () => {
                 )}
               </div>
 
-              {/* Phone Input */}
               <div>
                 <label
                   htmlFor="phone"
@@ -230,7 +224,6 @@ const OrderSummary = () => {
                 )}
               </div>
 
-              {/* Payment Method Radio Buttons */}
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
                   Төлбөрийн арга сонгоно уу
@@ -270,7 +263,6 @@ const OrderSummary = () => {
           </div>
         </div>
 
-        {/* Cart Items Section */}
         <div className="w-[50%]">
           <div className="bg-white shadow-lg rounded-lg p-6 space-y-6">
             {cartItems.length === 0 ? (

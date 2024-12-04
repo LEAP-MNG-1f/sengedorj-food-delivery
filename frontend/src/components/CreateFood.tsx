@@ -49,10 +49,13 @@ const CreateFood = (props: Props) => {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/create-food", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://sengedorj-food-delivery-3.onrender.com/api/create-food",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await response.json();
       if (data.success) {
         props.setIsModalOpenFood(false);
