@@ -43,7 +43,7 @@ export const FoodCategoryPage = () => {
   const fetchDataFood = async () => {
     try {
       const response = await fetch(
-        "https://sengedorj-food-delivery-3.onrender.com/api/foods"
+        "https://sengedorj-food-delivery-1.onrender.com/api/foods"
       );
       const data: FoodResponse = await response.json();
       setFoodData(data.data);
@@ -57,7 +57,7 @@ export const FoodCategoryPage = () => {
   const fetchDataCategory = async () => {
     try {
       const response = await fetch(
-        "https://sengedorj-food-delivery-3.onrender.com/api/categories"
+        "https://sengedorj-food-delivery-1.onrender.com/api/categories"
       );
       const data: CategoryResponse = await response.json();
       setCategoryData(data.data);
@@ -76,7 +76,7 @@ export const FoodCategoryPage = () => {
   return (
     <div className="flex flex-col h-auto gap-8">
       <HeaderPart />
-      <div className="flex w-full container mx-auto h-auto pt-[75px]">
+      <div className="flex w-full container mx-auto h-auto ">
         <FoodMenuContainer
           categoryData={categoryData}
           initialActiveButton="breakfast"

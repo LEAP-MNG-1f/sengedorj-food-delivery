@@ -13,7 +13,7 @@ export const HomePage = () => {
   return (
     <div>
       <HeaderPart />
-      <div className="pt-[75px]">
+      <div className="">
         <Hero />
       </div>
       <div className="flex container m-auto  justify-between">

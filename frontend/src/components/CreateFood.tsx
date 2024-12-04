@@ -50,7 +50,7 @@ const CreateFood = (props: Props) => {
 
     try {
       const response = await fetch(
-        "https://sengedorj-food-delivery-3.onrender.com/api/create-food",
+        "https://sengedorj-food-delivery-1.onrender.com/api/create-food",
         {
           method: "POST",
           body: formData,

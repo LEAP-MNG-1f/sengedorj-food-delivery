@@ -13,7 +13,7 @@ type Food = {
   name: string;
   price: number;
   image: string;
-  ingredients: string;
+  ingredient: string;
 };
 
 type Category = {
@@ -84,7 +84,7 @@ export const FoodMenuua = () => {
   const fetchDataFood = async () => {
     try {
       const response = await fetch(
-        "https://sengedorj-food-delivery-3.onrender.com/api/foods"
+        "https://sengedorj-food-delivery-1.onrender.com/api/foods"
       );
       const data: FoodResponse = await response.json();
       setFoodData(data.data);
@@ -96,7 +96,7 @@ export const FoodMenuua = () => {
   const fetchDataCategory = async () => {
     try {
       const response = await fetch(
-        "https://sengedorj-food-delivery-3.onrender.com/api/categories"
+        "https://sengedorj-food-delivery-1.onrender.com/api/categories"
       );
       const data: CategoryResponse = await response.json();
       setCategoryData(data.data);
@@ -135,7 +135,7 @@ export const FoodMenuua = () => {
   return (
     <div>
       <HeaderPart />
-      <div className="container m-auto  pb-[40px]">
+      <div className="container m-auto  pb-[40px] pt-[30px]">
         <Stack direction="row" spacing={2}>
           {categoryData.map((category) => (
             <Button
@@ -201,7 +201,7 @@ export const FoodMenuua = () => {
           img={modalData.image}
           text={modalData.name}
           amount={modalData.price}
-          ingredients={modalData.ingredients}
+          ingredient={modalData.ingredient}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onAddToCart={(quantity) => addToCart(modalData, quantity)}

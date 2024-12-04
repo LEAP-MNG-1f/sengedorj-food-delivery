@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HeaderPart from "@/components/Header";
-import { Food } from "@/components/icons/Food";
 
 export default function Dashboard() {
   const [orders, setOrders] = useState<any[]>([]);

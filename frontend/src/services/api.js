@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://sengedorj-food-delivery-1.onrender.com/api";
 
 const getCategories = async () => {
   const response = await fetch(`${BASE_URL}/categories`);

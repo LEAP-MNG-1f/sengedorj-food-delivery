@@ -1,10 +1,49 @@
 import * as React from "react";
 
-type FoodModalProps = {
+type FoodCardProps = {
   img: string;
   text: string;
   amount: number;
   ingredients: string;
+  onOpenModal: () => void;
+};
+
+export const FoodCard: React.FC<FoodCardProps> = ({
+  img,
+  text,
+  amount,
+  ingredients,
+  onOpenModal,
+}) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <div
+      className={`relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
+        isHovered ? "scale-105" : "scale-100"
+      }`}
+      onClick={onOpenModal}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        src={img}
+        alt={text}
+        className="w-full h-[200px] object-cover rounded-t-xl"
+      />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-800">{text}</h3>
+        <h4 className="text-green-500 font-bold text-xl">{amount}₮</h4>
+      </div>
+    </div>
+  );
+};
+
+type FoodModalProps = {
+  img: string;
+  text: string;
+  amount: number;
+  ingredient: string;
   isOpen: boolean;
   onClose: () => void;
   onAddToCart: (quantity: number) => void;
@@ -14,7 +53,7 @@ export const FoodModal: React.FC<FoodModalProps> = ({
   img,
   text,
   amount,
-  ingredients,
+  ingredient,
   isOpen,
   onClose,
   onAddToCart,
@@ -28,14 +67,23 @@ export const FoodModal: React.FC<FoodModalProps> = ({
 
   const handleAddToCart = () => {
     onAddToCart(quantity);
+    alert(`Таны сагсанд ${quantity} ${text} нэмэгдлээ!`);
     onClose();
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center transition-all duration-300">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-[800px] w-[90%] relative">
+    <div
+      className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center transition-opacity duration-300 ${
+        isOpen ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div
+        className={`bg-white rounded-2xl shadow-2xl p-8 max-w-[800px] w-[90%] relative transform transition-all duration-300 ${
+          isOpen ? "scale-100" : "scale-95"
+        }`}
+      >
         <button
           className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors duration-200 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
           onClick={onClose}
@@ -62,7 +110,7 @@ export const FoodModal: React.FC<FoodModalProps> = ({
               </h2>
               <div className="space-y-2">
                 <h3 className="font-semibold text-gray-700">Орц:</h3>
-                <p className="text-gray-600 leading-relaxed">{ingredients}</p>
+                <p className="text-gray-600 leading-relaxed">{ingredient}</p>
               </div>
             </div>
 
