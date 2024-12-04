@@ -263,8 +263,8 @@ const OrderSummary = () => {
           </div>
         </div>
 
-        <div className="w-[50%]">
-          <div className="bg-white shadow-lg rounded-lg p-6 space-y-6">
+        <div className="w-[35%]">
+          <div className="bg-white shadow-lg rounded-lg p-6 space-y-6 ">
             {cartItems.length === 0 ? (
               <div className="text-center py-8 text-gray-500">
                 Сагс хоосон байна
@@ -274,21 +274,21 @@ const OrderSummary = () => {
                 {cartItems.map((item: any) => (
                   <div
                     key={item.food._id}
-                    className="flex items-center gap-4 mb-4"
+                    className="flex  items-center gap-4 mb-4 w-full "
                   >
                     <img
                       src={item.food.image}
                       alt={item.food.name}
                       className="w-20 h-20 object-cover rounded-lg"
                     />
+                    <div className="text-sm font-medium text-gray-700">
+                      {item.food.price * item.quantity}₮
+                    </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">
                         {item.food.name}
                       </h3>
                       <p className="text-gray-600">{item.food.ingredient}</p>
-                    </div>
-                    <div className="text-sm font-medium text-gray-700">
-                      {item.food.price * item.quantity}₮
                     </div>
                   </div>
                 ))}
