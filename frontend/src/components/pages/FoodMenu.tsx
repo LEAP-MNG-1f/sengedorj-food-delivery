@@ -45,7 +45,6 @@ export const FoodMenuua = () => {
   const [modalData, setModalData] = useState<Food | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // New cart-related states
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 

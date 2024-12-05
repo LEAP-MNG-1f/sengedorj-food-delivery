@@ -250,7 +250,7 @@ const OrderSummary = () => {
                       onChange={handleInputChange}
                       className="form-radio text-blue-500 border-gray-300 focus:ring-blue-500"
                     />
-                    <span className="ml-2">Картаар</span>
+                    <span className="ml-2">Qpay</span>
                   </label>
                 </div>
                 {errors.paymentMethod && (
